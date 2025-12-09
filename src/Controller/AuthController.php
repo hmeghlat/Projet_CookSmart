@@ -37,7 +37,7 @@ class AuthController extends AbstractController
         // Crée un nouvel utilisateur
         $user = new User();
         $user->setEmail($data['email']);
-        $user->setUsername($data['username']);
+       
         
         // Hash le mot de passe
         $hashedPassword = $passwordHasher->hashPassword($user, $data['password']);
@@ -54,8 +54,7 @@ class AuthController extends AbstractController
             'message' => 'Utilisateur créé avec succès',
             'user' => [
                 'id' => $user->getId(),
-                'email' => $user->getEmail(),
-                'username' => $user->getUsername()
+                'email' => $user->getEmail()
             ]
         ], 201);
     }
