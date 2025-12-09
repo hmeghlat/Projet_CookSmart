@@ -44,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Pseudo = null;
+    private ?string $pseudo = null;
 
     public function __construct()
     {
@@ -176,12 +176,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getPseudo(): ?string
     {
-        return $this->Pseudo;
+        return $this->pseudo;
     }
 
-    public function setPseudo(string $Pseudo): static
+    public function setPseudo(string $pseudo): static
     {
-        $this->Pseudo = $Pseudo;
+        $this->pseudo = $pseudo;
 
         return $this;
     }

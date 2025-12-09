@@ -24,7 +24,7 @@ class AuthController extends AbstractController
         $data = json_decode($request->getContent(), true);
 
         // Vérifie que tous les champs sont présents
-        if (!isset($data['email']) || !isset($data['password']) || !isset($data['username'])) {
+        if (!isset($data['email']) || !isset($data['password']) || !isset($data['pseudo'])) {
             return $this->json(['error' => 'Données manquantes'], 400);
         }
 
@@ -37,7 +37,7 @@ class AuthController extends AbstractController
         // Crée un nouvel utilisateur
         $user = new User();
         $user->setEmail($data['email']);
-       
+        $user->setPseudo($data['pseudo']);
         
         // Hash le mot de passe
         $hashedPassword = $passwordHasher->hashPassword($user, $data['password']);
@@ -54,7 +54,8 @@ class AuthController extends AbstractController
             'message' => 'Utilisateur créé avec succès',
             'user' => [
                 'id' => $user->getId(),
-                'email' => $user->getEmail()
+                'email' => $user->getEmail(),
+                'pseudo' => $user->getPseudo(),
             ]
         ], 201);
     }
