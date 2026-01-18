@@ -1,0 +1,1357 @@
+[
+  {
+    "title": "Pâtes à l’ail et au citron",
+    "prep_time_min": 15,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "spaghetti",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 2,
+        "unit": "gousses"
+      },
+      {
+        "name": "citron",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "persil",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Cuire les pâtes al dente. Pendant ce temps, faire revenir l’ail émincé dans l’huile d’olive 1 min sans le brûler. Ajouter le zeste + jus de citron, sel, poivre. Égoutter les pâtes en gardant un peu d’eau de cuisson, mélanger avec la sauce et ajuster avec un trait d’eau de cuisson. Parsemer de persil et servir."
+  },
+  {
+    "title": "Omelette au fromage",
+    "prep_time_min": 10,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "œufs",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "fromage râpé",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Battre les œufs avec sel et poivre. Faire fondre le beurre à feu moyen, verser les œufs. Quand ça prend, ajouter le fromage, plier l’omelette et cuire encore 1 min."
+  },
+  {
+    "title": "Salade de thon express",
+    "prep_time_min": 10,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "thon en boîte",
+        "quantity": 1,
+        "unit": "boîte"
+      },
+      {
+        "name": "maïs",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "name": "tomates",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "concombre",
+        "quantity": 0.5,
+        "unit": ""
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "vinaigre",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "moutarde",
+        "quantity": 1,
+        "unit": "c. à café"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Égoutter le thon et le maïs. Couper tomates et concombre. Mélanger tout. Faire une vinaigrette (huile, vinaigre, moutarde, sel, poivre) et assaisonner."
+  },
+  {
+    "title": "Poulet sauté au paprika",
+    "prep_time_min": 25,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "blanc de poulet",
+        "quantity": 300,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "paprika",
+        "quantity": 2,
+        "unit": "c. à café"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "crème",
+        "quantity": 80,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Émincer l’oignon. Couper le poulet en dés. Faire revenir oignon + poulet dans l’huile. Ajouter paprika, sel, poivre. Verser la crème et laisser mijoter 5 min."
+  },
+  {
+    "title": "Riz à la tomate (one-pot)",
+    "prep_time_min": 20,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "riz",
+        "quantity": 180,
+        "unit": "g"
+      },
+      {
+        "name": "coulis de tomate",
+        "quantity": 250,
+        "unit": "ml"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "ail",
+        "quantity": 1,
+        "unit": "gousse"
+      },
+      {
+        "name": "bouillon",
+        "quantity": 300,
+        "unit": "ml"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Faire revenir oignon + ail dans l’huile. Ajouter le riz, remuer 1 min. Verser coulis + bouillon. Couvrir et cuire 15–18 min jusqu’à absorption."
+  },
+  {
+    "title": "Poêlée de légumes surgelés",
+    "prep_time_min": 15,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "mélange de légumes surgelés",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sauce soja",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "ail",
+        "quantity": 1,
+        "unit": "gousse"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Poêler les légumes dans l’huile à feu vif 8–10 min. Ajouter ail râpé et sauce soja, poivrer, cuire 2 min."
+  },
+  {
+    "title": "Chili sin carne rapide",
+    "prep_time_min": 25,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "haricots rouges",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "maïs",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "name": "pulpe de tomate",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "cumin",
+        "quantity": 1,
+        "unit": "c. à café"
+      },
+      {
+        "name": "paprika",
+        "quantity": 1,
+        "unit": "c. à café"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Faire revenir l’oignon. Ajouter pulpe de tomate, épices, haricots et maïs égouttés. Mijoter 15 min, rectifier le sel."
+  },
+  {
+    "title": "Wrap jambon-fromage",
+    "prep_time_min": 8,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "tortilla",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "jambon",
+        "quantity": 2,
+        "unit": "tranches"
+      },
+      {
+        "name": "fromage",
+        "quantity": 2,
+        "unit": "tranches"
+      },
+      {
+        "name": "salade",
+        "quantity": 2,
+        "unit": "feuilles"
+      },
+      {
+        "name": "yaourt",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "moutarde",
+        "quantity": 1,
+        "unit": "c. à café"
+      }
+    ],
+    "instructions": "Mélanger yaourt + moutarde. Tartiner la tortilla, ajouter salade, jambon, fromage. Rouler serré et couper."
+  },
+  {
+    "title": "Soupe de carottes au cumin",
+    "prep_time_min": 30,
+    "servings": 4,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "carottes",
+        "quantity": 600,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "cumin",
+        "quantity": 1,
+        "unit": "c. à café"
+      },
+      {
+        "name": "bouillon",
+        "quantity": 900,
+        "unit": "ml"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Faire revenir l’oignon. Ajouter carottes en rondelles, cumin, bouillon. Cuire 20 min puis mixer. Ajuster le sel."
+  },
+  {
+    "title": "Gratin de pommes de terre rapide",
+    "prep_time_min": 45,
+    "servings": 4,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pommes de terre",
+        "quantity": 800,
+        "unit": "g"
+      },
+      {
+        "name": "crème",
+        "quantity": 250,
+        "unit": "ml"
+      },
+      {
+        "name": "lait",
+        "quantity": 150,
+        "unit": "ml"
+      },
+      {
+        "name": "ail",
+        "quantity": 1,
+        "unit": "gousse"
+      },
+      {
+        "name": "fromage râpé",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "noix de muscade",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Préchauffer à 180°C. Frotter un plat avec l’ail. Couper les pommes de terre finement, disposer. Mélanger crème + lait + sel + muscade, verser. Ajouter fromage, cuire 35–40 min."
+  },
+  {
+    "title": "Lentilles aux lardons",
+    "prep_time_min": 35,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "lentilles vertes",
+        "quantity": 250,
+        "unit": "g"
+      },
+      {
+        "name": "lardons",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "name": "carotte",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "bouillon",
+        "quantity": 900,
+        "unit": "ml"
+      },
+      {
+        "name": "laurier",
+        "quantity": 1,
+        "unit": "feuille"
+      }
+    ],
+    "instructions": "Rincer les lentilles. Faire revenir oignon, carotte, lardons. Ajouter lentilles, bouillon, laurier. Cuire 25–30 min."
+  },
+  {
+    "title": "Quiche sans pâte au thon",
+    "prep_time_min": 40,
+    "servings": 4,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "thon en boîte",
+        "quantity": 1,
+        "unit": "boîte"
+      },
+      {
+        "name": "œufs",
+        "quantity": 3,
+        "unit": ""
+      },
+      {
+        "name": "lait",
+        "quantity": 300,
+        "unit": "ml"
+      },
+      {
+        "name": "farine",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "name": "fromage râpé",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Préchauffer à 180°C. Mélanger farine + œufs + lait, saler/poivrer. Ajouter thon égoutté et fromage. Verser dans un moule huilé. Cuire 30–35 min."
+  },
+  {
+    "title": "Couscous express aux légumes",
+    "prep_time_min": 20,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "couscous",
+        "quantity": 250,
+        "unit": "g"
+      },
+      {
+        "name": "pois chiches",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "mélange de légumes (carottes/courgettes)",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "bouillon",
+        "quantity": 350,
+        "unit": "ml"
+      },
+      {
+        "name": "épices couscous",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      }
+    ],
+    "instructions": "Cuire les légumes dans le bouillon avec les épices 10–12 min. Verser le bouillon chaud sur la semoule avec un filet d’huile, couvrir 5 min puis égrainer. Ajouter pois chiches et légumes."
+  },
+  {
+    "title": "Porridge banane-cannelle",
+    "prep_time_min": 8,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "flocons d’avoine",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 200,
+        "unit": "ml"
+      },
+      {
+        "name": "banane",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "cannelle",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Chauffer flocons + lait 3–4 min en remuant. Écraser la banane, ajouter. Saupoudrer de cannelle."
+  },
+  {
+    "title": "Salade de pâtes au pesto",
+    "prep_time_min": 20,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pâtes",
+        "quantity": 250,
+        "unit": "g"
+      },
+      {
+        "name": "pesto",
+        "quantity": 3,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "tomates cerises",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "mozzarella",
+        "quantity": 125,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Cuire les pâtes, rincer à l’eau froide et égoutter. Mélanger avec pesto, tomates coupées, mozzarella. Saler légèrement."
+  },
+  {
+    "title": "Saumon au four citron-aneth",
+    "prep_time_min": 20,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "filets de saumon",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "citron",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "aneth",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Préchauffer à 190°C. Déposer le saumon, arroser d’huile, citron, sel, aneth. Cuire 12–15 min."
+  },
+  {
+    "title": "Tartines avocat-œuf",
+    "prep_time_min": 12,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pain",
+        "quantity": 2,
+        "unit": "tranches"
+      },
+      {
+        "name": "avocat",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "œufs",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "citron",
+        "quantity": 0.5,
+        "unit": ""
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Griller le pain. Écraser l’avocat avec citron, sel, poivre. Cuire les œufs au plat ou mollets. Tartiner et déposer l’œuf."
+  },
+  {
+    "title": "Poêlée de champignons à la crème",
+    "prep_time_min": 15,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "champignons",
+        "quantity": 300,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 1,
+        "unit": "gousse"
+      },
+      {
+        "name": "crème",
+        "quantity": 100,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "name": "persil",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Faire sauter les champignons dans le beurre 8 min. Ajouter ail, sel, crème. Laisser réduire 3 min, parsemer de persil."
+  },
+  {
+    "title": "Bowl riz, œuf, légumes",
+    "prep_time_min": 25,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "riz",
+        "quantity": 180,
+        "unit": "g"
+      },
+      {
+        "name": "œufs",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "carotte",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "concombre",
+        "quantity": 0.5,
+        "unit": ""
+      },
+      {
+        "name": "sauce soja",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "huile de sésame",
+        "quantity": 1,
+        "unit": "c. à café"
+      }
+    ],
+    "instructions": "Cuire le riz. Râper carotte, couper concombre. Cuire les œufs au plat. Dresser le bowl, arroser de sauce soja + huile de sésame."
+  },
+  {
+    "title": "Pâtes au thon et tomates",
+    "prep_time_min": 20,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pâtes",
+        "quantity": 300,
+        "unit": "g"
+      },
+      {
+        "name": "thon en boîte",
+        "quantity": 1,
+        "unit": "boîte"
+      },
+      {
+        "name": "pulpe de tomate",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "origan",
+        "quantity": 1,
+        "unit": "c. à café"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Cuire les pâtes. Faire revenir l’oignon, ajouter pulpe de tomate + origan + sel, mijoter 10 min. Ajouter thon égoutté, mélanger avec les pâtes."
+  },
+  {
+    "title": "Curry de pois chiches",
+    "prep_time_min": 25,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pois chiches",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "lait de coco",
+        "quantity": 200,
+        "unit": "ml"
+      },
+      {
+        "name": "pulpe de tomate",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "curry",
+        "quantity": 2,
+        "unit": "c. à café"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Faire revenir l’oignon. Ajouter curry, pulpe de tomate, pois chiches égouttés, lait de coco. Mijoter 15 min, saler."
+  },
+  {
+    "title": "Crêpes faciles",
+    "prep_time_min": 25,
+    "servings": 4,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 250,
+        "unit": "g"
+      },
+      {
+        "name": "œufs",
+        "quantity": 3,
+        "unit": ""
+      },
+      {
+        "name": "lait",
+        "quantity": 500,
+        "unit": "ml"
+      },
+      {
+        "name": "sucre",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "beurre",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Mélanger farine, sucre, sel. Ajouter œufs puis lait progressivement. Ajouter beurre fondu. Laisser reposer 10 min si possible. Cuire les crêpes dans une poêle chaude."
+  },
+  {
+    "title": "Yaourt bowl fruits & miel",
+    "prep_time_min": 5,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "yaourt",
+        "quantity": 1,
+        "unit": "pot"
+      },
+      {
+        "name": "fruits",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "name": "miel",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "granola",
+        "quantity": 30,
+        "unit": "g"
+      }
+    ],
+    "instructions": "Mettre le yaourt dans un bol, ajouter fruits, granola, puis napper de miel."
+  },
+  {
+    "title": "Salade grecque",
+    "prep_time_min": 12,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "tomates",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "concombre",
+        "quantity": 0.5,
+        "unit": ""
+      },
+      {
+        "name": "feta",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "name": "olives",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "origan",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Couper tomates et concombre. Ajouter feta en cubes, olives. Assaisonner huile + origan + sel."
+  },
+  {
+    "title": "Steak haché et purée express",
+    "prep_time_min": 25,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "steaks hachés",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "pommes de terre",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 80,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre",
+        "quantity": 20,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Cuire les pommes de terre, écraser avec lait + beurre + sel. Cuire les steaks à la poêle 2–3 min par face. Servir."
+  },
+  {
+    "title": "Poisson pané et salade",
+    "prep_time_min": 15,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "filets de poisson panés",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "salade",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "name": "tomates",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "vinaigre",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      }
+    ],
+    "instructions": "Cuire les filets panés selon l’emballage. Préparer une salade (huile + vinaigre) et servir avec tomates."
+  },
+  {
+    "title": "Pâtes carbonara (simple)",
+    "prep_time_min": 20,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pâtes",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "lardons",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "name": "œufs",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "parmesan",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Cuire les pâtes. Dorer les lardons. Battre œufs + parmesan + poivre. Hors du feu, mélanger pâtes chaudes + lardons + sauce (ajouter un peu d’eau de cuisson si besoin)."
+  },
+  {
+    "title": "Pizza tortilla",
+    "prep_time_min": 12,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "tortilla",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "coulis de tomate",
+        "quantity": 3,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "fromage râpé",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "name": "jambon",
+        "quantity": 1,
+        "unit": "tranche"
+      },
+      {
+        "name": "origan",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Préchauffer à 200°C. Étaler coulis sur la tortilla, ajouter jambon, fromage, origan. Cuire 7–8 min."
+  },
+  {
+    "title": "Smoothie fraise-banane",
+    "prep_time_min": 5,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "banane",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "fraises",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "name": "yaourt",
+        "quantity": 1,
+        "unit": "pot"
+      },
+      {
+        "name": "lait",
+        "quantity": 100,
+        "unit": "ml"
+      }
+    ],
+    "instructions": "Mixer tous les ingrédients jusqu’à texture lisse. Ajuster avec un peu de lait."
+  },
+  {
+    "title": "Ratatouille express",
+    "prep_time_min": 30,
+    "servings": 4,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "courgette",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "aubergine",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "poivron",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "pulpe de tomate",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "herbes de Provence",
+        "quantity": 1,
+        "unit": "c. à café"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Couper les légumes. Faire revenir l’oignon, ajouter les légumes 5 min. Verser pulpe de tomate + herbes + sel. Mijoter 20 min."
+  },
+  {
+    "title": "Gnocchis à la crème et épinards",
+    "prep_time_min": 15,
+    "servings": 2,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "gnocchis",
+        "quantity": 400,
+        "unit": "g"
+      },
+      {
+        "name": "épinards",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "crème",
+        "quantity": 150,
+        "unit": "ml"
+      },
+      {
+        "name": "ail",
+        "quantity": 1,
+        "unit": "gousse"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Poêler les gnocchis 5 min. Ajouter ail, épinards, cuire 3–4 min. Ajouter crème, saler, laisser épaissir 2 min."
+  },
+  {
+    "title": "Croque-monsieur",
+    "prep_time_min": 15,
+    "servings": 1,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pain de mie",
+        "quantity": 2,
+        "unit": "tranches"
+      },
+      {
+        "name": "jambon",
+        "quantity": 1,
+        "unit": "tranche"
+      },
+      {
+        "name": "fromage",
+        "quantity": 2,
+        "unit": "tranches"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": "Beurrer le pain. Garnir jambon + fromage, refermer. Cuire à la poêle 3–4 min par face ou au grille-pain à croque."
+  },
+  {
+    "title": "Compote pomme-cannelle",
+    "prep_time_min": 20,
+    "servings": 4,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "pommes",
+        "quantity": 6,
+        "unit": ""
+      },
+      {
+        "name": "sucre",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "cannelle",
+        "quantity": 1,
+        "unit": "pincée"
+      },
+      {
+        "name": "eau",
+        "quantity": 80,
+        "unit": "ml"
+      }
+    ],
+    "instructions": "Éplucher/couper les pommes. Cuire avec eau, sucre et cannelle 15–18 min, puis écraser."
+  },
+  {
+    "title": "Taboulé express",
+    "prep_time_min": 15,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "semoule",
+        "quantity": 250,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 250,
+        "unit": "ml"
+      },
+      {
+        "name": "tomates",
+        "quantity": 2,
+        "unit": ""
+      },
+      {
+        "name": "concombre",
+        "quantity": 0.5,
+        "unit": ""
+      },
+      {
+        "name": "menthe",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "citron",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "huile d’olive",
+        "quantity": 2,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Verser l’eau bouillante sur la semoule, couvrir 5 min puis égrainer. Ajouter tomates/concombre en dés, menthe, jus de citron, huile, sel."
+  },
+  {
+    "title": "Pancakes faciles",
+    "prep_time_min": 20,
+    "servings": 3,
+    "image_url": null,
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1,
+        "unit": ""
+      },
+      {
+        "name": "lait",
+        "quantity": 250,
+        "unit": "ml"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 1,
+        "unit": "sachet"
+      },
+      {
+        "name": "sucre",
+        "quantity": 1,
+        "unit": "c. à soupe"
+      },
+      {
+        "name": "sel",
+        "quantity": 1,
+        "unit": "pincée"
+      }
+    ],
+    "instructions": "Mélanger farine, levure, sucre, sel. Ajouter œuf puis lait. Cuire des petites louches dans une poêle légèrement huilée 1–2 min par face."
+  }
+]

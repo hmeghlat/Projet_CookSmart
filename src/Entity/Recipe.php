@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
 class Recipe
@@ -14,27 +15,34 @@ class Recipe
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['recipe:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['recipe:read'])]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['recipe:read'])]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Groups(['recipe:read'])]
     private ?int $prepTime = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['recipe:read'])]
     private ?string $imageUrl = null;
 
     #[ORM\Column]
+    #[Groups(['recipe:read'])]
     private ?\DateTimeImmutable $createdAt = null;
 
     /**
      * @var Collection<int, Ingredient>
      */
-    #[ORM\ManyToMany(targetEntity: Ingredient::class, inversedBy: 'yes')]
+    #[ORM\ManyToMany(targetEntity: Ingredient::class, inversedBy: 'recipes')]
+    #[Groups(['recipe:read'])]
     private Collection $ingredients;
 
     public function __construct()

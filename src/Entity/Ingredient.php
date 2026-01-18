@@ -6,6 +6,7 @@ use App\Repository\IngredientRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: IngredientRepository::class)]
 class Ingredient
@@ -13,18 +14,23 @@ class Ingredient
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['ingredient:read', 'inventory:read', 'recipe:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 150)]
+    #[Groups(['ingredient:read', 'inventory:read', 'recipe:read'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(['ingredient:read', 'inventory:read', 'recipe:read'])]
     private ?string $unit = null;
 
     #[ORM\Column(length: 100, nullable: true)]
+    #[Groups(['ingredient:read', 'inventory:read', 'recipe:read'])]
     private ?string $category = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['ingredient:read', 'inventory:read', 'recipe:read'])]
     private ?string $icon = null;
 
     /**
@@ -37,12 +43,13 @@ class Ingredient
      * @var Collection<int, Recipe>
      */
     #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: 'ingredients')]
-    private Collection $yes;
+    #[Groups(['ingredient:read'])]
+    private Collection $recipes;
 
     public function __construct()
     {
         $this->userInventories = new ArrayCollection();
-        $this->yes = new ArrayCollection();
+        $this->recipes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -131,25 +138,25 @@ class Ingredient
     /**
      * @return Collection<int, Recipe>
      */
-    public function getYes(): Collection
+    public function getRecipes(): Collection
     {
-        return $this->yes;
+        return $this->recipes;
     }
 
-    public function addYe(Recipe $ye): static
+    public function addRecipe(Recipe $recipe): static
     {
-        if (!$this->yes->contains($ye)) {
-            $this->yes->add($ye);
-            $ye->addIngredient($this);
+        if (!$this->recipes->contains($recipe)) {
+            $this->recipes->add($recipe);
+            $recipe->addIngredient($this);
         }
 
         return $this;
     }
 
-    public function removeYe(Recipe $ye): static
+    public function removeRecipe(Recipe $recipe): static
     {
-        if ($this->yes->removeElement($ye)) {
-            $ye->removeIngredient($this);
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeIngredient($this);
         }
 
         return $this;

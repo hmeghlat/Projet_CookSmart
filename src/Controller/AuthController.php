@@ -9,15 +9,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-#[Route('/api', name: 'api_')]
-class AuthController extends AbstractController
+final class AuthController extends AbstractController
 {
-    #[Route('/register', name: 'register', methods: ['POST'])]
+    #[Route('/api/register', name: 'register', methods: ['POST'])]
     public function register(
         Request $request,
         UserPasswordHasherInterface $passwordHasher,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        ValidatorInterface $validator
     ): JsonResponse
     {
         // Récupère les données JSON envoyées
@@ -38,13 +39,30 @@ class AuthController extends AbstractController
         $user = new User();
         $user->setEmail($data['email']);
         $user->setPseudo($data['pseudo']);
-        
+
         // Hash le mot de passe
         $hashedPassword = $passwordHasher->hashPassword($user, $data['password']);
         $user->setPassword($hashedPassword);
-        
+
         $user->setCreatedAt(new \DateTimeImmutable());
         $user->setRoles(['ROLE_USER']);
+
+        // Validation des données
+        $errors = $validator->validate($user);
+        if (count($errors) > 0) {
+            $errorsArray = [];
+            foreach ($errors as $error) {
+                $errorsArray[$error->getPropertyPath()][] = $error->getMessage();
+            }
+
+            return $this->json(
+                [
+                    'error' => 'Données invalides',
+                    'details' => $errorsArray,
+                ],
+                400
+            );
+        }
 
         // Sauvegarde en base de données
         $entityManager->persist($user);
