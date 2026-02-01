@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+.app-header {
+  background: #ffffff;
+  padding: 0 80px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.app-header-content {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header-content--with-nav {
+  justify-content: space-between;
+}
+
+.app-logo {
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.app-logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.app-logo-icon span {
+  color: white !important;
+  font-size: 1.8em !important;
+  font-weight: 900 !important;
+}
+
+.app-logo-text {
+  color: #1a1a1a !important;
+  font-weight: 900;
+}
+
+.app-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.app-nav-link {
+  text-decoration: none;
+  color: #737373;
+  font-weight: 700;
+  font-size: 1em;
+  transition: color 0.3s ease;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app-nav-link:hover {
+  color: #1a1a1a;
+}
+
+.app-nav-link.active {
+  color: #10b981;
+}
+
+.app-nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  border-radius: 2px;
+}
+
+.app-nav-link-button {
+  color: #ef4444;
+  font-weight: 800;
+}
+
+.app-nav-link-button:hover {
+  color: #b91c1c;
+}
+
+@media (max-width: 900px) {
+  .app-header {
+    padding: 0 24px;
+  }
+
+  .app-nav-menu {
+    gap: 18px;
+  }
+}

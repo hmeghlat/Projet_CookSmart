@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* Réutiliser les styles de LoginPage */
+.register-page {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf9 100%);
+  position: relative;
+}
+
+.register-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 30% 20%,
+      rgba(16, 185, 129, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(5, 150, 105, 0.06) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+/* ========== HEADER (même style) ========== */
+.header {
+  background: #ffffff;
+  padding: 0 80px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.header-content {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.logo-icon span {
+  color: white !important;
+  font-size: 1.8em !important;
+  font-weight: 900 !important;
+}
+
+.logo-text {
+  color: #1a1a1a !important;
+  font-weight: 900;
+}
+
+.logo-text span {
+  color: #1a1a1a !important;
+}
+
+/* ========== REGISTER CONTAINER ========== */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.register-card {
+  background: #ffffff;
+  border: 3px solid #e5e5e5;
+  border-radius: 24px;
+  padding: 56px 48px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+}
+
+.register-title {
+  font-size: 2.2em;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.register-subtitle {
+  font-size: 1em;
+  color: #737373;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ========== FORM ========== */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.2px;
+}
+
+.form-input {
+  padding: 16px 20px;
+  border: 3px solid #e5e5e5;
+  border-radius: 12px;
+  font-size: 1em;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: #a3a3a3;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #34d399;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.1);
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1) !important;
+}
+
+/* ========== ERROR & HELPER TEXT ========== */
+.error-text {
+  color: #dc2626;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-top: -4px;
+}
+
+.helper-text {
+  color: #737373;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin-top: -4px;
+}
+
+/* ========== BUTTON ========== */
+.btn-submit {
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  color: white;
+  padding: 18px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.btn-submit:hover::before {
+  left: 100%;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.45);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ========== ERROR MESSAGE ========== */
+.error-message {
+  background: #fef2f2;
+  border: 2px solid #fecaca;
+  color: #dc2626;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 0.95em;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ========== LOGIN LINK ========== */
+.login-link {
+  text-align: center;
+  color: #737373;
+  font-size: 0.95em;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.link {
+  color: #10b981;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  color: #059669;
+  text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 24px;
+    height: 64px;
+  }
+
+  .logo {
+    font-size: 1.5em;
+  }
+
+  .register-container {
+    padding: 100px 20px 60px;
+  }
+
+  .register-card {
+    padding: 40px 28px;
+  }
+
+  .register-title {
+    font-size: 1.8em;
+  }
+
+  .register-subtitle {
+    font-size: 0.9em;
+  }
+
+  .btn-submit {
+    padding: 16px 28px;
+    font-size: 1em;
+  }
+}
