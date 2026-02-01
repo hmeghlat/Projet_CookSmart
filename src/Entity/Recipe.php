@@ -39,16 +39,17 @@ class Recipe
     private ?\DateTimeImmutable $createdAt = null;
 
     /**
-     * @var Collection<int, Ingredient>
+     * @var Collection<int, RecipeIngredient>
      */
-    #[ORM\ManyToMany(targetEntity: Ingredient::class, inversedBy: 'recipes')]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: ['persist'])]
     #[Groups(['recipe:read'])]
-    private Collection $ingredients;
-
+    private Collection $recipeIngredients;
+    
     public function __construct()
     {
-        $this->ingredients = new ArrayCollection();
+        $this->recipeIngredients = new ArrayCollection();
     }
+    
 
     public function getId(): ?int
     {
@@ -116,26 +117,31 @@ class Recipe
     }
 
     /**
-     * @return Collection<int, Ingredient>
+     * @return Collection<int, RecipeIngredient>
      */
-    public function getIngredients(): Collection
+    public function getRecipeIngredients(): Collection
     {
-        return $this->ingredients;
+        return $this->recipeIngredients;
     }
-
-    public function addIngredient(Ingredient $ingredient): static
+    
+    public function addRecipeIngredient(RecipeIngredient $recipeIngredient): static
     {
-        if (!$this->ingredients->contains($ingredient)) {
-            $this->ingredients->add($ingredient);
+        if (!$this->recipeIngredients->contains($recipeIngredient)) {
+            $this->recipeIngredients->add($recipeIngredient);
+            $recipeIngredient->setRecipe($this);
         }
-
+    
         return $this;
     }
-
-    public function removeIngredient(Ingredient $ingredient): static
+    
+    public function removeRecipeIngredient(RecipeIngredient $recipeIngredient): static
     {
-        $this->ingredients->removeElement($ingredient);
-
+        if ($this->recipeIngredients->removeElement($recipeIngredient)) {
+            if ($recipeIngredient->getRecipe() === $this) {
+                $recipeIngredient->setRecipe(null);
+            }
+        }
+    
         return $this;
     }
 }

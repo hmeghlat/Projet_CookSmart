@@ -23,7 +23,6 @@ final class RecipeController extends AbstractController
 
         // Récupération des paramètres de recherche et filtres
         $search = $request->query->get('search', '');
-        $difficulty = $request->query->get('difficulty', '');
         $timeMin = $request->query->get('timeMin', null);
         $timeMax = $request->query->get('timeMax', null);
 
@@ -35,13 +34,6 @@ final class RecipeController extends AbstractController
             $qb->andWhere('LOWER(r.title) LIKE LOWER(:search)')
                 ->setParameter('search', '%' . $search . '%');
         }
-
-        // Filtre par difficulté (si le champ existe dans l'entité)
-        // Pour l'instant, on ignore car le champ n'existe pas encore
-        // if (!empty($difficulty)) {
-        //     $qb->andWhere('r.difficulty = :difficulty')
-        //         ->setParameter('difficulty', $difficulty);
-        // }
 
         // Filtre par temps de préparation
         if ($timeMin !== null) {

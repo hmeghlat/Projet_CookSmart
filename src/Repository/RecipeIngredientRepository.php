@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Recipe;
+use App\Entity\RecipeIngredient;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Recipe>
+ * @extends ServiceEntityRepository<RecipeIngredient>
  */
-class RecipeRepository extends ServiceEntityRepository
+class RecipeIngredientRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Recipe::class);
+        parent::__construct($registry, RecipeIngredient::class);
     }
 
     //    /**
-    //     * @return Recipe[] Returns an array of Recipe objects
+    //     * @return RecipeIngredient[] Returns an array of RecipeIngredient objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class RecipeRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Recipe
+    //    public function findOneBySomeField($value): ?RecipeIngredient
     //    {
     //        return $this->createQueryBuilder('r')
     //            ->andWhere('r.exampleField = :val')
@@ -40,16 +40,4 @@ class RecipeRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
-
-    public function findAllWithRecipeIngredients(): array
-{
-    return $this->createQueryBuilder('r')
-        ->leftJoin('r.recipeIngredients', 'ri')
-        ->addSelect('ri')
-        ->leftJoin('ri.ingredient', 'i')
-        ->addSelect('i')
-        ->getQuery()
-        ->getResult();
-}
-
 }
