@@ -10,17 +10,24 @@ function AppHeader({ showNavWhenLoggedOut = false }) {
     Boolean(localStorage.getItem("token"))
   );
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const syncAuth = () => setIsLoggedIn(Boolean(localStorage.getItem("token")));
     window.addEventListener("storage", syncAuth);
     return () => window.removeEventListener("storage", syncAuth);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const activePath = useMemo(() => location.pathname, [location.pathname]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
+    setIsMobileMenuOpen(false);
     navigate("/");
   };
 
@@ -41,7 +48,24 @@ function AppHeader({ showNavWhenLoggedOut = false }) {
         </Link>
 
         {shouldShowNav && (
-          <nav className="app-nav-menu">
+          <>
+            <button
+              type="button"
+              className="app-nav-toggle"
+              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="app-nav"
+              onClick={() => setIsMobileMenuOpen((v) => !v)}
+            >
+              <span className="app-nav-toggle-icon" aria-hidden="true">
+                {isMobileMenuOpen ? "✕" : "☰"}
+              </span>
+            </button>
+
+            <nav
+              id="app-nav"
+              className={`app-nav-menu ${isMobileMenuOpen ? "app-nav-menu--open" : ""}`}
+            >
             <Link
               to="/"
               className={`app-nav-link ${activePath === "/" ? "active" : ""}`}
@@ -93,7 +117,8 @@ function AppHeader({ showNavWhenLoggedOut = false }) {
                 </Link>
               </>
             )}
-          </nav>
+            </nav>
+          </>
         )}
       </div>
     </header>

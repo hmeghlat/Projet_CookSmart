@@ -1,0 +1,27 @@
+[
+  {"id":"tomate","name":"Tomate","category":"Légume","unit":"kg","icon":"🍅"},
+  {"id":"carotte","name":"Carotte","category":"Légume","unit":"kg","icon":"🥕"},
+  {"id":"oignon","name":"Oignon","category":"Légume","unit":"kg","icon":"🧅"},
+  {"id":"pomme-de-terre","name":"Pomme de terre","category":"Légume","unit":"kg","icon":"🥔"},
+  {"id":"salade","name":"Salade","category":"Légume","unit":"unité","icon":"🥬"},
+
+  {"id":"pomme","name":"Pomme","category":"Fruit","unit":"kg","icon":"🍎"},
+  {"id":"banane","name":"Banane","category":"Fruit","unit":"unité","icon":"🍌"},
+  {"id":"orange","name":"Orange","category":"Fruit","unit":"kg","icon":"🍊"},
+
+  {"id":"lait","name":"Lait","category":"Produit laitier","unit":"L","icon":"🥛"},
+  {"id":"beurre","name":"Beurre","category":"Produit laitier","unit":"g","icon":"🧈"},
+  {"id":"fromage","name":"Fromage","category":"Produit laitier","unit":"g","icon":"🧀"},
+  {"id":"yaourt","name":"Yaourt","category":"Produit laitier","unit":"unité","icon":"🥛"},
+
+  {"id":"oeuf","name":"oeuf","category":"Protéine","unit":"unité","icon":"🥚"},
+  {"id":"poulet","name":"Poulet","category":"Viande","unit":"kg","icon":"🍗"},
+  {"id":"boeuf","name":"Bœuf","category":"Viande","unit":"kg","icon":"🥩"},
+  {"id":"poisson","name":"Poisson","category":"Poisson","unit":"kg","icon":"🐟"},
+
+  {"id":"riz","name":"Riz","category":"Féculent","unit":"kg","icon":"🍚"},
+  {"id":"pates","name":"Pâtes","category":"Féculent","unit":"kg","icon":"🍝"},
+  {"id":"pain","name":"Pain","category":"Boulangerie","unit":"unité","icon":"🍞"},
+
+  {"id":"huile-olive","name":"Huile d'olive","category":"Condiment","unit":"L","icon":"🫒"}
+]

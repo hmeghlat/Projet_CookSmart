@@ -139,7 +139,7 @@ final class MatchingController extends AbstractController
 
             $score = (int) round(($matched / $total) * 100);
 
-            if ($score < 50) {
+            if ($score < 40) {
                 continue; // filtre <50% comme ton US :contentReference[oaicite:5]{index=5}
             }
 

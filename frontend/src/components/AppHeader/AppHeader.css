@@ -25,6 +25,7 @@
 
 .app-header-content--with-nav {
   justify-content: space-between;
+  position: relative;
 }
 
 .app-logo {
@@ -65,6 +66,29 @@
   display: flex;
   align-items: center;
   gap: 32px;
+}
+
+.app-nav-toggle {
+  display: none;
+  border: 2px solid #e5e5e5;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.app-nav-toggle:hover {
+  border-color: #34d399;
+}
+
+.app-nav-toggle-icon {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .app-nav-link {
@@ -114,7 +138,34 @@
     padding: 0 24px;
   }
 
+  .app-nav-toggle {
+    display: inline-flex;
+  }
+
   .app-nav-menu {
-    gap: 18px;
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: -24px;
+    right: -24px;
+    background: #ffffff;
+    padding: 16px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .app-nav-menu--open {
+    display: flex;
+  }
+
+  .app-nav-link {
+    padding: 10px 0;
+  }
+
+  .app-nav-link.active::after {
+    display: none;
   }
 }
