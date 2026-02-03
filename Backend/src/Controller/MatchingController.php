@@ -78,7 +78,7 @@ final class MatchingController extends AbstractController
 
                 // présent dans le frigo
                 $invQty = $inv->getQuantity();
-                $invUnit = $inv->getUnit(); // inventaire stocke quantity+unit :contentReference[oaicite:4]{index=4}
+                $invUnit = $inv->getUnit(); 
 
                 // Si la recette n’a pas encore de quantité requise (NULL), on considère OK
                 if ($requiredQty === null) {
