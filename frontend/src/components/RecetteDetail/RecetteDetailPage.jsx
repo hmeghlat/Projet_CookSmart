@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useApiFetch } from "../../services/useApiFetch.jsx";
-import AppHeader from "../../components/AppHeader/AppHeader.jsx";
-import "./RecipeDetailPage.css";
+import AppHeader from "../AppHeader/AppHeader.jsx";
+import "./RecetteDetailPage.css";
 
-function RecipeDetailPage() {
+function RecetteDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { data: recipe, loading, error } = useApiFetch(
@@ -49,7 +49,7 @@ function RecipeDetailPage() {
 
   return (
     <div className="recipe-detail-page">
-      <AppHeader showNavWhenLoggedOut={false} />
+      <AppHeader />
 
       {/* MAIN CONTENT */}
       <main className="main-content">
@@ -96,23 +96,27 @@ function RecipeDetailPage() {
             </div>
 
             {/* Ingredients Section */}
-            {recipe.ingredients && recipe.ingredients.length > 0 && (
+            {recipe.recipeIngredients && recipe.recipeIngredients.length > 0 && (
               <section className="recipe-section">
                 <h2 className="section-title">Ingrédients</h2>
                 <ul className="ingredients-list">
-                  {recipe.ingredients.map((ingredient, index) => (
+                  {recipe.recipeIngredients.map((recipeIngredient, index) => (
                     <li key={index} className="ingredient-item">
                       <span className="ingredient-icon">
-                        {ingredient.icon || "🍽️"}
+                        {recipeIngredient.ingredient.icon || "🍽️"}
                       </span>
-                      <span className="ingredient-name">{ingredient.name}</span>
-                      {ingredient.unit && (
-                        <span className="ingredient-unit">
-                          ({ingredient.unit})
+                      <span className="ingredient-name">{recipeIngredient.ingredient.name}</span>
+                      {recipeIngredient.quantity !== null && (
+                        <span className="ingredient-quantity">
+                           {recipeIngredient.quantity}
                         </span>
                       )}
-                      {/* Pour l'instant, on suppose que tous les ingrédients sont requis */}
-                      {/* Plus tard, on pourra ajouter un champ isOptional */}
+                      {recipeIngredient.unit && (
+                        <span className="ingredient-unit">
+                          ({recipeIngredient.unit})
+                        </span>
+                      )}
+                     
                     </li>
                   ))}
                 </ul>
@@ -145,4 +149,4 @@ function RecipeDetailPage() {
   );
 }
 
-export default RecipeDetailPage;
+export default RecetteDetailPage;

@@ -5,7 +5,7 @@ import AppHeader from "../../components/AppHeader/AppHeader.jsx";
 import "./LoginPage.css";
 
 function LoginPage() {
-  const { postData, data, loading, error } = useApiPost();
+  const { postData, loading, error } = useApiPost();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -32,6 +32,7 @@ function LoginPage() {
       // Stocker le token si présent
       if (result.token) {
         localStorage.setItem("token", result.token);
+        window.dispatchEvent(new Event("auth-changed"));
       }
 
       // Rediriger vers la page d'accueil
@@ -43,7 +44,7 @@ function LoginPage() {
 
   return (
     <div className="login-page">
-      <AppHeader showNavWhenLoggedOut={false} />
+      <AppHeader />
 
       {/* LOGIN CONTAINER */}
       <div className="login-container">

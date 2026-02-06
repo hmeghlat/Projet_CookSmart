@@ -5,7 +5,7 @@ import LoginPage from './Pages/Login/LoginPage'
 import RegisterPage from './Pages/register/registerPage'
 import MonFrigo from './Pages/MonFrigo/MonFrigo'
 import RecettesPage from './Pages/Recettes/RecettesPage'
-import RecipeDetailPage from './Pages/Recettes/RecipeDetailPage'
+import RecipeDetailPage from './components/RecetteDetail/RecetteDetailPage'
 import MatchPage from './Pages/Match/MatchPage'
 
 

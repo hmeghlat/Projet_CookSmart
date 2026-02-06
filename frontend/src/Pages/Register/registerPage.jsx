@@ -84,7 +84,7 @@ function RegisterPage() {
 
   return (
     <div className="register-page">
-      <AppHeader showNavWhenLoggedOut={false} />
+      <AppHeader />
 
       {/* REGISTER CONTAINER */}
       <div className="register-container">

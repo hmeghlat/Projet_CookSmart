@@ -13,18 +13,18 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class IngredientController extends AbstractController
 {
-    #[Route('/api/ingredients', name: 'ingredients_list', methods: ['GET'])]
-    public function getAllingredient(IngredientRepository $ingredientRepository): JsonResponse
-    {
-        $listIngredients = $ingredientRepository->findAll();
+    // #[Route('/api/ingredients', name: 'ingredients_list', methods: ['GET'])]
+    // public function getAllingredient(IngredientRepository $ingredientRepository): JsonResponse
+    // {
+    //     $listIngredients = $ingredientRepository->findAll();
 
-        return $this->json(
-            ['listIngredients' => $listIngredients],
-            Response::HTTP_OK,
-            [],
-            ['groups' => ['ingredient:read']]
-        );
-    }
+    //     return $this->json(
+    //         ['listIngredients' => $listIngredients],
+    //         Response::HTTP_OK,
+    //         [],
+    //         ['groups' => ['ingredient:read']]
+    //     );
+    // }
 
     #[Route('/api/ingredients/search', name: 'ingredients_search', methods: ['GET'])]
     public function search(IngredientRepository $ingredientRepository, Request $request): JsonResponse

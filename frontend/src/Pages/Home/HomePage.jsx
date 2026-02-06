@@ -11,12 +11,16 @@ function HomePage() {
   useEffect(() => {
     const syncAuth = () => setIsLoggedIn(Boolean(localStorage.getItem("token")));
     window.addEventListener("storage", syncAuth);
-    return () => window.removeEventListener("storage", syncAuth);
+    window.addEventListener("auth-changed", syncAuth);
+    return () => {
+      window.removeEventListener("storage", syncAuth);
+      window.removeEventListener("auth-changed", syncAuth);
+    };
   }, []);
 
   return (
     <div className="home-page">
-      <AppHeader showNavWhenLoggedOut={false} />
+      <AppHeader />
 
       {/* HERO SECTION */}
       <section className="hero">
@@ -121,7 +125,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      
       <section className="cta-section">
         <div className="cta-content">
           <h2>Prêt à révolutionner votre cuisine ?</h2>

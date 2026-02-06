@@ -50,7 +50,7 @@ function MatchPage() {
 
 	return (
 		<div className="match-page">
-			<AppHeader showNavWhenLoggedOut={false} />
+			<AppHeader />
 
 			{/* MAIN CONTENT */}
 			<main className="main-content">

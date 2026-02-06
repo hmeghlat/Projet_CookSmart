@@ -114,8 +114,7 @@ final class UserInventoryController extends AbstractController
             );
         }
 
-        // Retourner une réponse simple sans sérialiser l'entité complète
-        // Le frontend va refetch la liste de toute façon
+       
         return $this->json(
             [
                 'message' => 'Ingrédient ajouté avec succès',

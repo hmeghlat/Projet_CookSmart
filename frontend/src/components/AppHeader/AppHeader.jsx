@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./AppHeader.css";
 
-function AppHeader({ showNavWhenLoggedOut = false }) {
+function AppHeader() {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,16 +22,17 @@ function AppHeader({ showNavWhenLoggedOut = false }) {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const activePath = useMemo(() => location.pathname, [location.pathname]);
+  const activePath = location.pathname;
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
     setIsMobileMenuOpen(false);
+    window.dispatchEvent(new Event("auth-changed"));
     navigate("/");
   };
 
-  const shouldShowNav = isLoggedIn || showNavWhenLoggedOut;
+  const shouldShowNav = isLoggedIn;
 
   return (
     <header className="app-header">
@@ -73,50 +74,31 @@ function AppHeader({ showNavWhenLoggedOut = false }) {
               Accueil
             </Link>
 
-            {isLoggedIn ? (
-              <>
-                <Link
-                  to="/mon-frigo"
-                  className={`app-nav-link ${activePath.startsWith("/mon-frigo") ? "active" : ""}`}
-                >
-                  Mon Frigo
-                </Link>
-                <Link
-                  to="/recettes"
-                  className={`app-nav-link ${activePath.startsWith("/recettes") ? "active" : ""}`}
-                >
-                  Recettes
-                </Link>
-                <Link
-                  to="/mes-matchs"
-                  className={`app-nav-link ${activePath.startsWith("/mes-matchs") ? "active" : ""}`}
-                >
-                  Mes Matchs
-                </Link>
-                <button
-                  type="button"
-                  className="app-nav-link app-nav-link-button"
-                  onClick={handleLogout}
-                >
-                  Déconnexion
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className={`app-nav-link ${activePath.startsWith("/login") ? "active" : ""}`}
-                >
-                  Connexion
-                </Link>
-                <Link
-                  to="/register"
-                  className={`app-nav-link ${activePath.startsWith("/register") ? "active" : ""}`}
-                >
-                  Inscription
-                </Link>
-              </>
-            )}
+            <Link
+              to="/mon-frigo"
+              className={`app-nav-link ${activePath.startsWith("/mon-frigo") ? "active" : ""}`}
+            >
+              Mon Frigo
+            </Link>
+            <Link
+              to="/recettes"
+              className={`app-nav-link ${activePath.startsWith("/recettes") ? "active" : ""}`}
+            >
+              Recettes
+            </Link>
+            <Link
+              to="/mes-matchs"
+              className={`app-nav-link ${activePath.startsWith("/mes-matchs") ? "active" : ""}`}
+            >
+              Mes Matchs
+            </Link>
+            <button
+              type="button"
+              className="app-nav-link app-nav-link-button"
+              onClick={handleLogout}
+            >
+              Déconnexion
+            </button>
             </nav>
           </>
         )}

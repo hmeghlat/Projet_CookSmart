@@ -86,7 +86,7 @@ function RecettesPage() {
 
   return (
     <div className="recettes-page">
-      <AppHeader showNavWhenLoggedOut={false} />
+      <AppHeader />
 
       {/* MAIN CONTENT */}
       <main className="main-content">

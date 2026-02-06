@@ -7,7 +7,7 @@ import "./MonFrigo.css";
 
 function MonFrigo() {
   const { data, loading, error, refetch } = useApiFetch(
-    "https://127.0.0.1:8000/api/inventories"
+    "https://127.0.0.1:8000/api/inventories",
   );
   const { postData, putData, deleteData } = useApiPost();
   const [showModal, setShowModal] = useState(false);
@@ -15,8 +15,8 @@ function MonFrigo() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
+
   
-  // Les inventaires sont retournés directement comme un tableau
   const inventories = Array.isArray(data) ? data : [];
 
   const [formData, setFormData] = useState({
@@ -31,7 +31,6 @@ function MonFrigo() {
   const [ingredientSearch, setIngredientSearch] = useState("");
   const [ingredientSuggestions, setIngredientSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [selectedIngredient, setSelectedIngredient] = useState(null);
   const searchTimeoutRef = useRef(null);
   const suggestionsRef = useRef(null);
 
@@ -57,7 +56,7 @@ function MonFrigo() {
   const formatExpDate = (expDate) => {
     if (!expDate) return null;
     try {
-      return new Date(expDate).toLocaleDateString('fr-FR');
+      return new Date(expDate).toLocaleDateString("fr-FR");
     } catch {
       return null;
     }
@@ -84,19 +83,19 @@ function MonFrigo() {
 
     searchTimeoutRef.current = setTimeout(async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem("token");
         const headers = {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         };
         if (token) {
-          headers['Authorization'] = `Bearer ${token}`;
+          headers["Authorization"] = `Bearer ${token}`;
         }
 
         const response = await fetch(
           `https://127.0.0.1:8000/api/ingredients/search?q=${encodeURIComponent(ingredientSearch)}`,
-          { headers }
+          { headers },
         );
-        
+
         if (response.ok) {
           const result = await response.json();
           setIngredientSuggestions(result.ingredients || []);
@@ -117,19 +116,21 @@ function MonFrigo() {
   // Fermer les suggestions quand on clique ailleurs
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target)) {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(event.target)
+      ) {
         setShowSuggestions(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   const handleIngredientSelect = (ingredient) => {
-    setSelectedIngredient(ingredient);
     setFormData({
       ...formData,
       ingredient_id: ingredient.id,
@@ -147,7 +148,6 @@ function MonFrigo() {
       ingredient_id: "",
       ingredient_name: e.target.value,
     });
-    setSelectedIngredient(null);
   };
 
   const handleChange = (e) => {
@@ -168,7 +168,6 @@ function MonFrigo() {
       exp_date: "",
     });
     setIngredientSearch("");
-    setSelectedIngredient(null);
     setShowSuggestions(false);
     setShowModal(true);
   };
@@ -182,10 +181,11 @@ function MonFrigo() {
       ingredient_name: item.ingredient?.name || "",
       quantity: item.quantity,
       unit: item.unit,
-      exp_date: item.expDate ? new Date(item.expDate).toISOString().split('T')[0] : "",
+      exp_date: item.expDate
+        ? new Date(item.expDate).toISOString().split("T")[0]
+        : "",
     });
     setIngredientSearch(item.ingredient?.name || "");
-    setSelectedIngredient(item.ingredient || null);
     setShowSuggestions(false);
     setShowModal(true);
   };
@@ -197,7 +197,7 @@ function MonFrigo() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validation : vérifier qu'un ingrédient est sélectionné
     if (!isEditMode && !formData.ingredient_id) {
       alert("Veuillez sélectionner un ingrédient dans la liste de suggestions");
@@ -214,12 +214,14 @@ function MonFrigo() {
             quantity: formData.quantity,
             unit: formData.unit,
             exp_date: formData.exp_date || null,
-          }
+          },
         );
-        
+
         // Afficher le message de succès
         if (result && result.ingredient_icon) {
-          setSuccessMessage(`${result.ingredient_icon} ${result.message || 'Ingrédient modifié avec succès!'}`);
+          setSuccessMessage(
+            `${result.ingredient_icon} ${result.message || "Ingrédient modifié avec succès!"}`,
+          );
           setTimeout(() => {
             setSuccessMessage(null);
             setShowModal(false);
@@ -231,16 +233,21 @@ function MonFrigo() {
         }
       } else {
         // Ajouter un ingrédient
-        const result = await postData("https://127.0.0.1:8000/api/inventory/add", {
-          ingredient_id: formData.ingredient_id,
-          quantity: formData.quantity,
-          unit: formData.unit,
-          exp_date: formData.exp_date || null,
-        });
-        
+        const result = await postData(
+          "https://127.0.0.1:8000/api/inventory/add",
+          {
+            ingredient_id: formData.ingredient_id,
+            quantity: formData.quantity,
+            unit: formData.unit,
+            exp_date: formData.exp_date || null,
+          },
+        );
+
         // Afficher le message de succès avec l'emoji
         if (result && result.ingredient_icon) {
-          setSuccessMessage(`${result.ingredient_icon} ${result.message || 'Ingrédient ajouté avec succès!'}`);
+          setSuccessMessage(
+            `${result.ingredient_icon} ${result.message || "Ingrédient ajouté avec succès!"}`,
+          );
           setTimeout(() => {
             setSuccessMessage(null);
             setShowModal(false);
@@ -253,14 +260,17 @@ function MonFrigo() {
       }
     } catch (err) {
       console.error("Erreur:", err);
-      alert(err.message || "Une erreur est survenue lors de l'ajout de l'ingrédient");
+      alert(
+        err.message ||
+          "Une erreur est survenue lors de l'ajout de l'ingrédient",
+      );
     }
   };
 
   const handleDelete = async () => {
     try {
       await deleteData(
-        `https://127.0.0.1:8000/api/inventory/delete/${selectedItem.id}`
+        `https://127.0.0.1:8000/api/inventory/delete/${selectedItem.id}`,
       );
       setShowDeleteConfirm(false);
       refetch(); // Recharger la liste
@@ -272,7 +282,7 @@ function MonFrigo() {
 
   return (
     <div className="mon-frigo-page">
-      <AppHeader showNavWhenLoggedOut={false} />
+      <AppHeader />
 
       {/* MAIN CONTENT */}
       <main className="main-content">
@@ -310,7 +320,11 @@ function MonFrigo() {
                       <div className="card-info">
                         <div className="card-header-inline">
                           <span className="ingredient-name">
-                            {item.ingredient?.icon && <span style={{ marginRight: '8px' }}>{item.ingredient.icon}</span>}
+                            {item.ingredient?.icon && (
+                              <span style={{ marginRight: "8px" }}>
+                                {item.ingredient.icon}
+                              </span>
+                            )}
                             {item.ingredient?.name || "Ingrédient"}
                           </span>
                           {badge && (
@@ -369,20 +383,27 @@ function MonFrigo() {
 
             <form onSubmit={handleSubmit} className="modal-form">
               {successMessage && (
-                <div className="success-message" style={{
-                  padding: '12px 16px',
-                  backgroundColor: '#d1fae5',
-                  color: '#065f46',
-                  borderRadius: '8px',
-                  marginBottom: '20px',
-                  fontSize: '14px',
-                  fontWeight: '500'
-                }}>
+                <div
+                  className="success-message"
+                  style={{
+                    padding: "12px 16px",
+                    backgroundColor: "#d1fae5",
+                    color: "#065f46",
+                    borderRadius: "8px",
+                    marginBottom: "20px",
+                    fontSize: "14px",
+                    fontWeight: "500",
+                  }}
+                >
                   {successMessage}
                 </div>
               )}
-              
-              <div className="form-group" style={{ position: 'relative' }} ref={suggestionsRef}>
+
+              <div
+                className="form-group"
+                style={{ position: "relative" }}
+                ref={suggestionsRef}
+              >
                 <label className="form-label">Ingrédient *</label>
                 <input
                   type="text"
@@ -395,39 +416,54 @@ function MonFrigo() {
                   autoComplete="off"
                 />
                 {showSuggestions && ingredientSuggestions.length > 0 && (
-                  <div className="suggestions-dropdown" style={{
-                    position: 'absolute',
-                    top: '100%',
-                    left: 0,
-                    right: 0,
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                    zIndex: 1000,
-                    maxHeight: '200px',
-                    overflowY: 'auto',
-                    marginTop: '4px'
-                  }}>
+                  <div
+                    className="suggestions-dropdown"
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      right: 0,
+                      backgroundColor: "#ffffff",
+                      border: "1px solid #e5e7eb",
+                      borderRadius: "8px",
+                      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                      zIndex: 1000,
+                      maxHeight: "200px",
+                      overflowY: "auto",
+                      marginTop: "4px",
+                    }}
+                  >
                     {ingredientSuggestions.map((ingredient) => (
                       <div
                         key={ingredient.id}
                         onClick={() => handleIngredientSelect(ingredient)}
                         style={{
-                          padding: '12px 16px',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          transition: 'background-color 0.2s'
+                          padding: "12px 16px",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          transition: "background-color 0.2s",
                         }}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f4f6'}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                        onMouseEnter={(e) =>
+                          (e.target.style.backgroundColor = "#f3f4f6")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.target.style.backgroundColor = "transparent")
+                        }
                       >
-                        <span>{ingredient.icon || '🍽️'}</span>
-                        <span style={{ fontWeight: '500' }}>{ingredient.name}</span>
+                        <span>{ingredient.icon || "🍽️"}</span>
+                        <span style={{ fontWeight: "500" }}>
+                          {ingredient.name}
+                        </span>
                         {ingredient.category && (
-                          <span style={{ marginLeft: 'auto', color: '#6b7280', fontSize: '12px' }}>
+                          <span
+                            style={{
+                              marginLeft: "auto",
+                              color: "#6b7280",
+                              fontSize: "12px",
+                            }}
+                          >
                             {ingredient.category}
                           </span>
                         )}
@@ -435,25 +471,30 @@ function MonFrigo() {
                     ))}
                   </div>
                 )}
-                {showSuggestions && ingredientSuggestions.length === 0 && ingredientSearch.length >= 2 && (
-                  <div className="suggestions-dropdown" style={{
-                    position: 'absolute',
-                    top: '100%',
-                    left: 0,
-                    right: 0,
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                    zIndex: 1000,
-                    padding: '12px 16px',
-                    color: '#6b7280',
-                    fontSize: '14px',
-                    marginTop: '4px'
-                  }}>
-                    Aucun ingrédient trouvé
-                  </div>
-                )}
+                {showSuggestions &&
+                  ingredientSuggestions.length === 0 &&
+                  ingredientSearch.length >= 2 && (
+                    <div
+                      className="suggestions-dropdown"
+                      style={{
+                        position: "absolute",
+                        top: "100%",
+                        left: 0,
+                        right: 0,
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #e5e7eb",
+                        borderRadius: "8px",
+                        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                        zIndex: 1000,
+                        padding: "12px 16px",
+                        color: "#6b7280",
+                        fontSize: "14px",
+                        marginTop: "4px",
+                      }}
+                    >
+                      Aucun ingrédient trouvé
+                    </div>
+                  )}
               </div>
 
               <div className="form-row">

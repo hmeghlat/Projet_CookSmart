@@ -101,6 +101,4 @@ class ApiSecurityTest extends WebTestCase
         $this->assertArrayHasKey('token', $data);
         $this->assertNotEmpty($data['token']);
     }
-
-    
 }
