@@ -99,7 +99,7 @@ function RegisterPage() {
               <label htmlFor="pseudo" className="form-label">
                 Nom d'utilisateur *
               </label>
-              <input
+              <input data-testid="register-username"
                 type="text"
                 id="pseudo"
                 name="pseudo"
@@ -120,7 +120,7 @@ function RegisterPage() {
               <label htmlFor="email" className="form-label">
                 Email *
               </label>
-              <input
+              <input data-testid="register-email"
                 type="email"
                 id="email"
                 name="email"
@@ -141,7 +141,7 @@ function RegisterPage() {
               <label htmlFor="password" className="form-label">
                 Mot de passe *
               </label>
-              <input
+              <input data-testid="register-password"
                 type="password"
                 id="password"
                 name="password"

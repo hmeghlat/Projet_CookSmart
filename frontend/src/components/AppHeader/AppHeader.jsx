@@ -94,6 +94,7 @@ function AppHeader() {
             </Link>
             <button
               type="button"
+              data-testid="logout-button"
               className="app-nav-link app-nav-link-button"
               onClick={handleLogout}
             >

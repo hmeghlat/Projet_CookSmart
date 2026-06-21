@@ -56,7 +56,7 @@ function LoginPage() {
               <label htmlFor="email" className="form-label">
                 Email *
               </label>
-              <input
+              <input data-testid="login-email"
                 type="email"
                 id="email"
                 name="email"
@@ -72,7 +72,7 @@ function LoginPage() {
               <label htmlFor="password" className="form-label">
                 Mot de passe *
               </label>
-              <input
+              <input data-testid="login-password"
                 type="password"
                 id="password"
                 name="password"

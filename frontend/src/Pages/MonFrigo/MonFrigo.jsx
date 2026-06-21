@@ -4,6 +4,7 @@ import { useApiFetch } from "../../services/useApiFetch.jsx";
 import { useApiPost } from "../../services/useApiPost.jsx";
 import AppHeader from "../../components/AppHeader/AppHeader.jsx";
 import "./MonFrigo.css";
+import IngredientCard from "../../components/IngredientCard.jsx";
 
 function MonFrigo() {
   const { data, loading, error, refetch } = useApiFetch(
@@ -16,7 +17,6 @@ function MonFrigo() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
 
-  
   const inventories = Array.isArray(data) ? data : [];
 
   const [formData, setFormData] = useState({
@@ -33,24 +33,6 @@ function MonFrigo() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchTimeoutRef = useRef(null);
   const suggestionsRef = useRef(null);
-
-  // Fonction pour calculer les jours restants
-  const getDaysUntilExpiration = (expDate) => {
-    if (!expDate) return null;
-    const today = new Date();
-    const exp = new Date(expDate);
-    const diffTime = exp - today;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays;
-  };
-
-  // Fonction pour obtenir le badge
-  const getBadge = (expDate) => {
-    const days = getDaysUntilExpiration(expDate);
-    if (days === null) return null;
-    if (days < 5) return { type: "danger", label: "🔴" };
-    return { type: "success", label: "✅" };
-  };
 
   // Formater la date d'expiration pour l'affichage
   const formatExpDate = (expDate) => {
@@ -290,7 +272,11 @@ function MonFrigo() {
           {/* HEADER SECTION */}
           <div className="page-header">
             <h1 className="page-title">Mon Frigo</h1>
-            <button onClick={openAddModal} className="btn-add">
+            <button
+              onClick={openAddModal}
+              className="btn-add"
+              data-testid="add-ingredient-button"
+            >
               + Ajouter
             </button>
           </div>
@@ -312,53 +298,59 @@ function MonFrigo() {
 
             {sortedData &&
               sortedData.map((item) => {
-                const badge = getBadge(item.expDate);
                 const expDateFormatted = formatExpDate(item.expDate);
                 return (
-                  <div key={item.id} className="ingredient-card">
-                    <div className="card-left">
-                      <div className="card-info">
-                        <div className="card-header-inline">
-                          <span className="ingredient-name">
-                            {item.ingredient?.icon && (
-                              <span style={{ marginRight: "8px" }}>
-                                {item.ingredient.icon}
-                              </span>
-                            )}
-                            {item.ingredient?.name || "Ingrédient"}
-                          </span>
-                          {badge && (
-                            <span className={`badge badge-${badge.type}`}>
-                              {badge.label}
-                            </span>
-                          )}
-                        </div>
-                        <span className="ingredient-details">
-                          {item.quantity} {item.unit}
-                          {expDateFormatted ? (
-                            <> • Expire le {expDateFormatted}</>
-                          ) : (
-                            <> • Aucune date</>
-                          )}
-                        </span>
-                      </div>
-                    </div>
+                  <IngredientCard
+                    item={item}
+                    expDateFormatted={expDateFormatted}
+                    openEditModal={() => openEditModal(item)}
+                    openDeleteConfirm={() => openDeleteConfirm(item)}
+                    key={item.id}
+                  ></IngredientCard>
+                  // <div key={item.id} className="ingredient-card">
+                  //   <div className="card-left">
+                  //     <div className="card-info">
+                  //       <div className="card-header-inline">
+                  //         <span className="ingredient-name">
+                  //           {item.ingredient?.icon && (
+                  //             <span style={{ marginRight: "8px" }}>
+                  //               {item.ingredient.icon}
+                  //             </span>
+                  //           )}
+                  //           {item.ingredient?.name || "Ingrédient"}
+                  //         </span>
+                  //         {badge && (
+                  //           <span className={`badge badge-${badge.type}`}>
+                  //             {badge.label}
+                  //           </span>
+                  //         )}
+                  //       </div>
+                  //       <span className="ingredient-details">
+                  //         {item.quantity} {item.unit}
+                  //         {expDateFormatted ? (
+                  //           <> • Expire le {expDateFormatted}</>
+                  //         ) : (
+                  //           <> • Aucune date</>
+                  //         )}
+                  //       </span>
+                  //     </div>
+                  //   </div>
 
-                    <div className="card-actions">
-                      <button
-                        onClick={() => openEditModal(item)}
-                        className="btn-action btn-edit"
-                      >
-                        Modifier
-                      </button>
-                      <button
-                        onClick={() => openDeleteConfirm(item)}
-                        className="btn-action btn-delete"
-                      >
-                        Supprimer
-                      </button>
-                    </div>
-                  </div>
+                  //   <div className="card-actions">
+                  //     <button
+                  //       onClick={() => openEditModal(item)}
+                  //       className="btn-action btn-edit"
+                  //     >
+                  //       Modifier
+                  //     </button>
+                  //     <button
+                  //       onClick={() => openDeleteConfirm(item)}
+                  //       className="btn-action btn-delete"
+                  //     >
+                  //       Supprimer
+                  //     </button>
+                  //   </div>
+                  // </div>
                 );
               })}
           </div>
@@ -368,7 +360,11 @@ function MonFrigo() {
       {/* MODAL AJOUTER/MODIFIER */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content"
+            data-testid="ingredient-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="modal-header">
               <h2 className="modal-title">
                 {isEditMode ? "Modifier l'ingrédient" : "Mon ingrédient"}
@@ -409,6 +405,7 @@ function MonFrigo() {
                   type="text"
                   name="ingredient_name"
                   value={ingredientSearch}
+                  data-testid="ingredient-search"
                   onChange={handleIngredientSearchChange}
                   className="form-input"
                   placeholder="Rechercher un ingrédient..."
@@ -503,6 +500,7 @@ function MonFrigo() {
                   <input
                     type="number"
                     name="quantity"
+                    data-testid="ingredient-quantity"
                     value={formData.quantity}
                     onChange={handleChange}
                     className="form-input"
@@ -545,7 +543,11 @@ function MonFrigo() {
                 >
                   Annuler
                 </button>
-                <button type="submit" className="btn-submit-modal">
+                <button
+                  type="submit"
+                  className="btn-submit-modal"
+                  data-testid="submit-ingredient-button"
+                >
                   {isEditMode ? "Modifier" : "Ajouter"}
                 </button>
               </div>
@@ -580,7 +582,7 @@ function MonFrigo() {
               >
                 Annuler
               </button>
-              <button onClick={handleDelete} className="btn-delete-confirm">
+              <button onClick={handleDelete} className="btn-delete-confirm"  data-testid="confirm-delete-ingredient-button"  >
                 Supprimer
               </button>
             </div>

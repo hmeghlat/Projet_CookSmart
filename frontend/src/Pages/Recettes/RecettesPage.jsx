@@ -105,7 +105,7 @@ function RecettesPage() {
           <div className="search-filters-section">
             {/* Search Bar */}
             <div className="search-container">
-              <input
+              <input data-testid="recipe-search"
                 type="text"
                 className="search-input"
                 placeholder="Rechercher une recette..."
